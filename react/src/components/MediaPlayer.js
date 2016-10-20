@@ -25,7 +25,7 @@ class MediaPlayer extends Component {
     let formData = {comment: { time: this.state.time, commentBody: this.state.commentBody}}
     $.ajax({
       type: 'POST',
-      url: 'api/v1/comments',
+      url: '/api/v1/comments',
       data: { comment: formData }
     }).success(data =>{
       let message = 'success';

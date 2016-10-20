@@ -31,6 +31,9 @@
     </div>
 
     <%= yield %>
+    <% flash.each do |key, value| %>
+    <%= value %>
+  <% end %>
   </body>
 
 </html>
