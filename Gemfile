@@ -10,6 +10,7 @@ gem 'devise'
 gem 'react-rails'
 gem 'foundation-rails'
 gem 'ruby_dep', '~> 1.4'
+gem 'httparty'
 
 group :development, :test do
   gem 'capybara'
