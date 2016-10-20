@@ -15,7 +15,7 @@ class MediaPlayer extends Component {
   }
   render() {
     return (
-      <Media src="http://www.youtube.com/embed/h3YVKTxTOgU">
+      <Media src="https://www.youtube.com/watch?v=n0hPEeGXnxw&list=PLKG--4mRoNpBn8WvKrLdNLkTxrqjx0hue&index=31">
         {Player =>
           <div className="media">
             <div className="media-player">

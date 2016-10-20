@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'listen'
 gem 'devise'
 gem 'react-rails'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'capybara'
