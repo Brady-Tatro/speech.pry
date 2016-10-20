@@ -30,7 +30,7 @@ class MediaPlayer extends Component {
     }).success(data =>{
       let message = 'success';
       this.setState({ flash: message });
-      console.long('Posted');
+      console.log('Posted');
     }).error(data => {
       let message = 'Invalid fields';
       this.setState({ flash: message });
