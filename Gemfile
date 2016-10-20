@@ -1,5 +1,5 @@
 source 'https://rubygems.org/'
-
+ruby '2.3.1'
 gem 'rails', '5.0'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
@@ -9,6 +9,7 @@ gem 'listen'
 gem 'devise'
 gem 'react-rails'
 gem 'foundation-rails'
+gem 'ruby_dep', '~> 1.4'
 
 group :development, :test do
   gem 'capybara'
