@@ -8,9 +8,6 @@ class API::V1::CommentsController < ApplicationController
   def create
     @comment = Comment.new
     @comment.user = current_user
-    if @comment.save
-      flash[:notice] = "Comment added"
-    end
   end
 
   private

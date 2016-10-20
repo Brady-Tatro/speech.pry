@@ -31,7 +31,12 @@ class MediaPlayer extends Component {
       let message = 'success';
       this.setState({ flash: message });
       console.long('Posted');
-    })
+    }).error(data => {
+      let message = 'Invalid fields';
+      this.setState({ flash: message });
+      console.log(data);
+    });
+     event.preventDefault();
   }
 
   handleChange(event) {
@@ -56,13 +61,15 @@ class MediaPlayer extends Component {
             <Duration/>
             <MuteUnmute/>
             <Volume/>
+            {this.state.flash}
             </nav>
-            <button onClick={this.handleClick}>Comment</button>
+            <button onClick={this.handleClick}>
             <CommentForm
             handleFormSubmit={this.handleFormSubmit}
             time={this.state.time}
             commentBody={this.state.commentBody}
             />
+            </button>
           </div>
         }
       </Media>
