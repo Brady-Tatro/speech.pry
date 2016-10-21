@@ -8,6 +8,11 @@ class Api::V1::SpeechesController < ApplicationController
     end
   end
 
+  def show
+    @speech = Speech.find(params[:id])
+
+  end
+
   def new
     @speech = Speech.new
   end

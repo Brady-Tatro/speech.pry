@@ -7,7 +7,8 @@ root "application#index"
   resource :newmedia
   resource :showmedia
   resource :indexmedia
-  
+  resource :targetspeech
+
   namespace :api do
     namespace :v1 do
       resources :comments, only: [:new, :create]
