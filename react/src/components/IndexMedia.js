@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import MediaList from './MediaList'
 
 class IndexMedia extends Component {
   constructor(){
     super();
     this.state = {
-      speeches: '',
+      speeches: [],
       title: '',
       intervalID: ''
     }
@@ -14,10 +13,10 @@ class IndexMedia extends Component {
 
   getSpeeches() {
     $.ajax({
-      type: 'GET',
-      url: '/api/v1/speeches',
-      data: { speeches: data.speeches}
-
+      method: 'GET',
+      url: '/api/v1/speeches'
+    }).done(data => {
+      this.setState({ speeches: data.speeches })
     })
   }
 
@@ -29,9 +28,9 @@ class IndexMedia extends Component {
   render() {
     return (
       <div>
-      <MediaList
-      speeches={this.state.speeches}
-      />
+      {this.state.speeches.map((speech) => (
+      <li key={speech.id}>{speech.title}</li>
+    ))}
       </div>
     )
   }

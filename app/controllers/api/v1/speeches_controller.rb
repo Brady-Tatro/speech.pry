@@ -2,6 +2,10 @@ class Api::V1::SpeechesController < ApplicationController
 
   def index
     @speeches = Speech.all
+    respond_to do |format|
+      format.json { render json: { speeches: @speeches } }
+      format.json
+    end
   end
 
   def new
