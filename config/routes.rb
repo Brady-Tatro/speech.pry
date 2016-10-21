@@ -6,6 +6,7 @@ root "application#index"
 
   resource :newmedia
   resource :showmedia
+  resource :indexmedia
   
   namespace :api do
     namespace :v1 do

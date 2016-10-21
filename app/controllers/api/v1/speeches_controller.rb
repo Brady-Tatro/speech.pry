@@ -1,5 +1,9 @@
 class Api::V1::SpeechesController < ApplicationController
 
+  def index
+    @speeches = Speech.all
+  end
+
   def new
     @speech = Speech.new
   end
