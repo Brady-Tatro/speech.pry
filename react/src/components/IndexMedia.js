@@ -29,7 +29,7 @@ class IndexMedia extends Component {
     return (
       <div>
       {this.state.speeches.map((speech) => (
-      <li key={speech.id}>{speech.title}</li>
+       <li ><a href= {"/api/v1/speeches/" + speech.id}>{speech.title}</a></li>
     ))}
       </div>
     )
