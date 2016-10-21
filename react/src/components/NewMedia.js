@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { hashHistory } from 'react-router'
 class NewMedia extends Component {
   constructor(){
     super();
@@ -7,7 +7,7 @@ class NewMedia extends Component {
       speech: '',
       title: '',
       media: '',
-      flash: ''
+      flash: '',
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -28,7 +28,8 @@ class NewMedia extends Component {
       this.setState({ flash: message });
       console.log(data);
     });
-
+    event.preventDefault();
+    hashHistory.push('/');
   }
 
   handleChange(event) {
@@ -58,7 +59,7 @@ class NewMedia extends Component {
           />
           </div>
         <div className="submit">
-          <input  type="submit" value="Submit" />
+          <input type="submit" value="Submit" />
         </div>
         </form>
     )
