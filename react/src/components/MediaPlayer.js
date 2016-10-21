@@ -8,9 +8,9 @@ class MediaPlayer extends Component {
   constructor() {
     super();
     this.state = {
-      comment: '',
+      fullComment: '',
       time: '',
-      commentBody: '',
+      comment: '',
       flash: ''
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -24,11 +24,11 @@ class MediaPlayer extends Component {
 
   handleFormSubmit(event) {
 
-    let formData = {comment: { time: this.state.time, commentBody: this.state.commentBody}}
+    let formData = { time: this.state.time, comment: this.state.comment}
     $.ajax({
       type: 'POST',
       url: '/api/v1/comments',
-      data: { comment: formData }
+      data: { fullComment: formData }
     }).success(data =>{
       let message = 'success';
       this.setState({ flash: message });
@@ -70,7 +70,7 @@ class MediaPlayer extends Component {
             <CommentForm
             handleFormSubmit={this.handleFormSubmit}
             time={this.state.time}
-            commentBody={this.state.commentBody}
+            commentBody={this.state.comment}
             />
             </button>
           </div>

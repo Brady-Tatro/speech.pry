@@ -6,7 +6,6 @@ class Api::V1::SpeechesController < ApplicationController
 
   def create
     @speech = Speech.new(speech_params)
-    binding.pry
     @speech.user_id = current_user.id
     if @speech.save
       flash[:notice] = "Speech has been added"
