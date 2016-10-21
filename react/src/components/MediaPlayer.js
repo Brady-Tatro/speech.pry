@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Media, controls } from 'react-media-player'
 const { PlayPause, CurrentTime, Progress, SeekBar, Duration, MuteUnmute, Volume } = controls
 import CommentForm from './CommentForm'
+import NewMedia from './NewMedia'
 
 class MediaPlayer extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class MediaPlayer extends Component {
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleClick(event) {
@@ -47,8 +49,9 @@ class MediaPlayer extends Component {
 
   render() {
     let flash = $('#flash').text();
+    let media = "https://www.youtube.com/watch?v=WibmcsEGLKo"
     return (
-      <Media src="https://www.youtube.com/watch?v=WibmcsEGLKo">
+      <Media src={media}>
         {Player =>
           <div className="media">
             <div className="media-player">

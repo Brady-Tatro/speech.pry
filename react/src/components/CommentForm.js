@@ -5,7 +5,7 @@ const CommentForm = props => {
     <form onSubmit={props.handleFormSubmit}>
     <div className="field">
     <input
-      type="hidden"
+      type="text"
       value={props.time}
       name='time'
       onChange={props.handleChange}
@@ -13,9 +13,10 @@ const CommentForm = props => {
       </div>
       <div className="field">
       <input
-        type="hidden"
+        type="text"
         value={props.commentBody}
-        name='comment'
+        name='commentBody'
+        onChange={props.handleChange}
         />
         </div>
       <div className="submit">
