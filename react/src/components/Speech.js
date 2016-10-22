@@ -7,7 +7,8 @@ class MediaPlayer extends Component {
   constructor() {
     super();
     this.state = {
-      speech: '',
+      speechId: '',
+      userId: '',
       title: '',
       media: 'https://www.youtube.com/watch?v=l9ue0SJs74I',
       fullComment: '',
@@ -71,6 +72,7 @@ class MediaPlayer extends Component {
       <Media src={this.state.media}>
         {Player =>
           <div className="media">
+
           {this.state.title}
             <div className="media-player">
               {Player}
