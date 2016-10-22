@@ -24,7 +24,7 @@ class IndexMedia extends Component {
 
   componentWillMount(){
     this.getSpeeches();
-    setInterval(this.getSpeeches, 100000000);
+    setInterval(this.getSpeeches, 10000);
   }
 
   render() {

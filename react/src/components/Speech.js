@@ -8,7 +8,7 @@ class MediaPlayer extends Component {
     this.state = {
       speech: '',
       title: '',
-      media: ''
+      media: 'https://www.youtube.com/watch?v=n0hPEeGXnxw'
     }
     this.handleCreation = this.handleCreation.bind(this);
   }
@@ -19,10 +19,18 @@ class MediaPlayer extends Component {
       url: `/api/v1/speeches/${speech.id}`
     })
   }
-
+  componentWillMount() {
+    $.ajax({
+      method: 'GET',
+      url: `/api/v1/speeches/${this.props.params.id}`
+    }).success(data => {
+      this.setState({ media: data.speech.media })
+      this.setState({ title: data.speech.title })
+    })
+  }
   render() {
     return (
-      <Media src="http://www.youtube.com/embed/h3YVKTxTOgU">
+      <Media src={this.state.media}>
         {Player =>
           <div className="media">
             <div className="media-player">
@@ -31,7 +39,6 @@ class MediaPlayer extends Component {
             <div className="media-controls">
             <PlayPause/>
             <CurrentTime/>
-            <Progress/>
             <SeekBar/>
             <Duration/>
             <MuteUnmute/>

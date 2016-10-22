@@ -10,7 +10,10 @@ class Api::V1::SpeechesController < ApplicationController
 
   def show
     @speech = Speech.find(params[:id])
-
+    respond_to do |format|
+      format.json { render json: { speech: @speech }}
+      format.json
+    end
   end
 
   def new
