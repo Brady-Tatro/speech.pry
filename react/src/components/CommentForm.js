@@ -13,14 +13,14 @@ const CommentForm = props => {
       </div>
       <div className="field">
       <input
-        type="hidden"
+        type="text"
         value={props.comment}
         name='comment'
         onChange={props.handleChange}
         />
         </div>
       <div className="submit">
-        <input onClick={props.handleClick} type="submit" value="Submit Comment Marker" />
+        <input onClick={props.handleClick} type="submit" value="Submit Comment" />
       </div>
       </form>
   )
