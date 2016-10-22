@@ -44,4 +44,4 @@ class MediaPlayer extends Component {
   }
 }
 
-export default Speech;
+export default MediaPlayer;

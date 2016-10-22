@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { hashHistory } from 'react-router'
+import { Link, hashHistory } from 'react-router'
+
 
 class IndexMedia extends Component {
   constructor(){
@@ -30,8 +31,7 @@ class IndexMedia extends Component {
     return (
       <div>
       {this.state.speeches.map((speech) => (
-       <li ><a href= {hashHistory.push("/api/v1/speeches/" + speech.id)}>{speech.title}</a></li>
-
+       <li ><Link to={"/indexmedia/" + speech.id}>{speech.title}</Link></li>
     ))}
 
       </div>

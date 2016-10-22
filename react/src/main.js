@@ -15,7 +15,7 @@ $(function() {
     <Route path="/showmedia" component={MediaPlayer}/>
     <Route path="/newmedia" component={NewMedia}/>
     <Route path="/indexmedia" component={IndexMedia}/>
-    <Route path="/targetspeech" component={Speech}/>
+    <Route path="indexmedia/:id" component={Speech}/>
     </Router>
   ), document.getElementById('app'))
 });
