@@ -3,6 +3,16 @@ Rails.application.routes.draw do
 root "application#index"
 
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  resource :newmedia
+  resource :showmedia
+  resource :indexmedia
+  resource :targetspeech
+
+  namespace :api do
+    namespace :v1 do
+      resources :comments, only: [:new, :create]
+      resources :speeches, only: [:new, :create, :show, :index]
+    end
+  end
 end

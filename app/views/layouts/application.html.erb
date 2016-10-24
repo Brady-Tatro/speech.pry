@@ -25,6 +25,9 @@
               <li> <%= link_to 'Sign In', new_user_session_path %> </li>
               <li><%= link_to "Home", root_path %></li>
             <% end %>
+            <% flash.each do |key, value| %>
+            <%= value %>
+            <% end %>
           </ul>
         </div>
       </ul>

@@ -10,20 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019204226) do
+ActiveRecord::Schema.define(version: 20161024203743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string   "log_time",   null: false
-    t.string   "comment"
-    t.integer  "user_id",    null: false
-    t.integer  "speech_id",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string  "time",      null: false
+    t.string  "comment"
+    t.integer "speech_id", null: false
+    t.integer "user_id"
     t.index ["speech_id"], name: "index_comments_on_speech_id", using: :btree
-    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "speeches", force: :cascade do |t|
