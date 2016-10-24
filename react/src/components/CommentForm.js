@@ -7,7 +7,6 @@ const CommentForm = props => {
     <input
       type="text"
       value={props.time}
-      name='time'
       onChange={props.handleChange}
       />
       </div>
@@ -15,8 +14,19 @@ const CommentForm = props => {
       <input
         type="text"
         value={props.comment}
-        name='comment'
         onChange={props.handleChange}
+        />
+        </div>
+        <div className ="field">
+        <input
+        type="text"
+        value={props.speechId}
+        />
+        </div>
+        <div className ="field">
+        <input
+        type="text"
+        value={props.userId}
         />
         </div>
       <div className="submit">

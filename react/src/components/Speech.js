@@ -44,7 +44,7 @@ class MediaPlayer extends Component {
 
     handleFormSubmit(event) {
 
-      let formData = { time: this.state.time, comment: this.state.comment}
+      let formData = { time: this.state.time, comment: this.state.comment, speechId: this.state.speechId, userId: this.state.userId }
       $.ajax({
         type: 'POST',
         url: '/api/v1/comments',
@@ -89,7 +89,9 @@ class MediaPlayer extends Component {
             <CommentForm
             handleFormSubmit={this.handleFormSubmit}
             time={this.state.time}
-            commentBody={this.state.comment}
+            comment={this.state.comment}
+            speechId={this.state.speechId}
+            userId={this.state.userId}
             />
             </button>
           </div>
