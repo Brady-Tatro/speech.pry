@@ -1,12 +1,14 @@
 import React from 'react'
 
-const CommentForm = props => {
+const CommentFormDown = props => {
   return (
-    <form onSubmit={props.handleFormSubmit}>
+    <form onSubmit={props.handleFormSubmitdown}>
     <div className="hidden">
     <input
       type="hidden"
       value={props.time}
+
+
       />
       </div>
       <div className="field">
@@ -24,10 +26,10 @@ const CommentForm = props => {
         />
         </div>
       <div className="submit">
-        <input onClick={props.handleClick} type="submit" defaultValue="Upvote" />
+        <input onClick={props.handleClick} type="submit" defaultValue="downvote" />
       </div>
       </form>
   )
 }
 
-export default CommentForm;
+export default CommentFormDown;

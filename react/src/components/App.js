@@ -8,7 +8,6 @@ export default  React.createClass({
       <div>
       <ul role="nav" className="navbar">
       <li><NavLink to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</NavLink></li>
-      <li><NavLink to="/showmedia">See Speech</NavLink></li>
       <li><NavLink to="/newmedia">Add Speech</NavLink></li>
       <li><NavLink to="/indexmedia">See all Speeches</NavLink></li>
       </ul>
