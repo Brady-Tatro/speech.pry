@@ -5,10 +5,12 @@ class Api::V1::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user = current_user
+    @speech = Speech.find_by(id: [@comment.speechId])
+    @comment.speechId = @speech.id
     if @comment.save
      flash[:notice] = 'Success!'
    else
+
      @comment.errors.any?
      flash[:alert] = @comment.errors.full_messages.join("\n")
    end
@@ -17,6 +19,6 @@ class Api::V1::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:fullComment).permit(:time, :comment)
+    params.require(:fullComment).permit(:time, :comment, :speechId)
   end
 end

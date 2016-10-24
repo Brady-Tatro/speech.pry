@@ -23,12 +23,6 @@ const CommentForm = props => {
         value={props.speechId}
         />
         </div>
-        <div className ="field">
-        <input
-        type="text"
-        value={props.userId}
-        />
-        </div>
       <div className="submit">
         <input onClick={props.handleClick} type="submit" value="Submit Comment" />
       </div>
