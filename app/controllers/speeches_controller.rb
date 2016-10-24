@@ -18,5 +18,5 @@ class SpeechController < ApplicationController
 
   def speech_params
     params.require(:speech).permit(:title, :media)
-
+  end
 end

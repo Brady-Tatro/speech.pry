@@ -7,6 +7,7 @@ import NewMedia from './components/NewMedia'
 import IndexMedia from './components/IndexMedia'
 import Speech from './components/Speech'
 
+
 $(function() {
   ReactDOM.render((
     <Router history={hashHistory}>
