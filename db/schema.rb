@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024153440) do
+ActiveRecord::Schema.define(version: 20161024203743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string  "time",     null: false
+    t.string  "time",      null: false
     t.string  "comment"
-    t.integer "speechId", null: false
-    t.index ["speechId"], name: "index_comments_on_speechId", using: :btree
+    t.integer "speech_id", null: false
+    t.integer "user_id"
+    t.index ["speech_id"], name: "index_comments_on_speech_id", using: :btree
   end
 
   create_table "speeches", force: :cascade do |t|
@@ -28,8 +29,8 @@ ActiveRecord::Schema.define(version: 20161024153440) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "userId"
-    t.index ["userId"], name: "index_speeches_on_userId", using: :btree
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_speeches_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
