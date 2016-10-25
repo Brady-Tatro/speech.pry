@@ -13,7 +13,7 @@ root "application#index"
     namespace :v1 do
       resources :comments, only: [:new, :create]
       resources :speeches, only: [:new, :create, :show, :index]
-      resources :user, only: [:show, :index]
+      resources :members, only: [:show, :index]
     end
   end
 end
