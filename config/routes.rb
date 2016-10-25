@@ -5,7 +5,6 @@ root "application#index"
   devise_for :users
 
   resource :newmedia
-  resource :showmedia
   resource :indexmedia
   resource :targetspeech
 
@@ -13,6 +12,7 @@ root "application#index"
     namespace :v1 do
       resources :comments, only: [:new, :create]
       resources :speeches, only: [:new, :create, :show, :index]
+      resources :users, only: [:show]
     end
   end
 end
