@@ -6,7 +6,7 @@ import App from './components/App'
 import NewMedia from './components/NewMedia'
 import IndexMedia from './components/IndexMedia'
 import Speech from './components/Speech'
-
+import UserSpeeches from './components/UserSpeeches'
 
 $(function() {
   ReactDOM.render((
@@ -15,6 +15,7 @@ $(function() {
     <Route path="/newmedia" component={NewMedia}/>
     <Route path="/indexmedia" component={IndexMedia}/>
     <Route path="indexmedia/:id" component={Speech}/>
+    <Route path="/userspeeches" component={UserSpeeches}/>
     </Router>
   ), document.getElementById('app'))
 });

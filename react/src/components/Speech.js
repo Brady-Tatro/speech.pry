@@ -94,6 +94,7 @@ class MediaPlayer extends Component {
             <MuteUnmute/>
             <Volume/>
             </div>
+            {this.state.flash}
             <button onClick={this.handleClick}>
             <CommentForm
             handleFormSubmit={this.handleFormSubmit}
