@@ -11,11 +11,12 @@ class Api::V1::CommentsController < ApplicationController
     if @comment.save
      flash[:notice] = 'Success!'
    else
-     binding.pry
      @comment.errors.any?
      flash[:alert] = @comment.errors.full_messages.join("\n")
    end
   end
+
+
 
   private
 
