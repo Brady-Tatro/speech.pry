@@ -10,6 +10,7 @@ class MediaPlayer extends Component {
       title: '',
       media: 'https://www.youtube.com/watch?v=l9ue0SJs74I',
       fullComment: '',
+      speechId: '',
       time: '',
       comment: 'upvote',
       flash: ''
@@ -32,7 +33,7 @@ class MediaPlayer extends Component {
       method: 'GET',
       url: `/api/v1/speeches/${this.props.params.id}`
     }).success(data => {
-      this.setState({ media: data.speech.media, title: data.speech.title});
+      this.setState({ media: data.speech.media, title: data.speech.title, speechId: data.speech.id });
     })
   }
 
@@ -41,8 +42,7 @@ class MediaPlayer extends Component {
     }
 
     handleFormSubmit(event) {
-
-      let formData = { time: this.state.time, comment: this.state.comment}
+      let formData = { time: this.state.time, comment: this.state.comment, speechId: this.state.speechId }
       $.ajax({
         type: 'POST',
         url: '/api/v1/comments',
@@ -60,7 +60,7 @@ class MediaPlayer extends Component {
     }
 
     handleFormSubmitdown(event) {
-      let formData = { time: this.state.time, comment: "downvote"}
+      let formData = { time: this.state.time, comment: "downvote", speechId: this.state.speechId}
       $.ajax({
         type: 'POST',
         url: '/api/v1/comments',
@@ -94,7 +94,6 @@ class MediaPlayer extends Component {
             <MuteUnmute/>
             <Volume/>
             </div>
-            {this.state.flash}
             <button onClick={this.handleClick}>
             <CommentForm
             handleFormSubmit={this.handleFormSubmit}
@@ -109,6 +108,7 @@ class MediaPlayer extends Component {
             comment={this.state.comment}
             />
             </button>
+                  {this.state.flash}
           </div>
         }
       </Media>
