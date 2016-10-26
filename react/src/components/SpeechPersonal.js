@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Media, controls } from 'react-media-player'
 const { PlayPause, CurrentTime, Progress, SeekBar, Duration, MuteUnmute, Volume } = controls
-
+import NavLink from './NavLink'
 
 class MediaPlayer extends Component {
   constructor() {
@@ -36,7 +36,15 @@ class MediaPlayer extends Component {
       <Media src={this.state.media}>
         {Player =>
           <div className="media">
-          {this.state.title}
+          <div className="row">
+            <ul className="breadcrumbs">
+              <li><NavLink to="/">Home</NavLink></li>
+              <li><NavLink to="/newmedia">Add Speech</NavLink></li>
+              <li><NavLink to="/indexmedia">Rate Speeches</NavLink></li>
+              <li><NavLink to="/userspeeches">See Your Speeches</NavLink></li>
+            </ul>
+          </div>
+          <h1>{this.state.title}</h1>
             <div className="media-player">
               {Player}
             </div>
