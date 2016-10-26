@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024203743) do
+ActiveRecord::Schema.define(version: 20161026162344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161024203743) do
     t.string  "comment"
     t.integer "speech_id", null: false
     t.integer "user_id"
+    t.integer "speechId"
     t.index ["speech_id"], name: "index_comments_on_speech_id", using: :btree
   end
 

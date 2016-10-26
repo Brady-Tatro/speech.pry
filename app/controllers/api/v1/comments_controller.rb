@@ -5,7 +5,7 @@ class Api::V1::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @speech = Speech.find_by(params[:id])
+    @speech = Speech.find(@comment.speechId)
     @comment.speech_id = @speech.id
     @comment.user_id = current_user.id
     if @comment.save
@@ -21,6 +21,6 @@ class Api::V1::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:fullComment).permit(:time, :comment)
+    params.require(:fullComment).permit(:time, :comment, :speechId)
   end
 end
