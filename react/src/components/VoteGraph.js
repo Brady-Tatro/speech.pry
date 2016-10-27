@@ -6,8 +6,7 @@ const VoteGraph = props => {
 
   return (
     <div>
-      {this.state.comments.map((comment) => (
-        if 
+      {props.comments.map((comment) => (
         <li>{comment.time},{comment.comment}</li>
       ))}
     </div>
