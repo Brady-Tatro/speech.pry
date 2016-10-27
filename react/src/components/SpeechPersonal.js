@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Media, controls } from 'react-media-player'
-import { DataSet } from 'vis'
 const { PlayPause, CurrentTime, Progress, SeekBar, Duration, MuteUnmute, Volume } = controls
 import NavLink from './NavLink'
+import VoteGraph from './VoteGraph'
 
 class MediaPlayer extends Component {
   constructor() {
@@ -62,10 +62,10 @@ class MediaPlayer extends Component {
             <Volume/>
             </div>
             {this.state.flash}
-            <div>
-            {this.state.comments.map((comment) => (
-            <li>{comment.time},{comment.comment}</li>
-          ))}
+            <div className="row">
+            <VoteGraph
+            comments={this.state.comments}
+          />
             </div>
             </div>
           </div>

@@ -10,7 +10,7 @@ class Api::V1::SpeechesController < ApplicationController
 
   def show
     @speech = Speech.find(params[:id])
-    @comments = @speech.comments
+    @comments = @speech.comments.sort{ |a,b| a.time <=> b.time }
     respond_to do |format|
       format.json { render json: { speech: @speech, comment: @comments }}
       format.json

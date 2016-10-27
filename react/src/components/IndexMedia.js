@@ -41,7 +41,7 @@ class IndexMedia extends Component {
       <div className="field row">
       <div className="small-3 small-centered columns">
       {this.state.speeches.map((speech) => (
-       <ul><Link to={"/indexmedia/" + speech.id}>{speech.title}</Link></ul>
+       <ul key={speech.id}><Link to={"/indexmedia/" + speech.id}>{speech.title}</Link></ul>
     ))}
     </div>
     </div>
