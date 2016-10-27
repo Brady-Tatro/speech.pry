@@ -16,7 +16,7 @@ const CommentForm = props => {
         />
       </div>
       <div className="submit">
-        <input onClick={props.handleClick} type="submit" defaultValue="Upvote" />
+        <input onClick={props.handleClick} type="submit" className="button success" id="buttons" defaultValue="Upvote" />
       </div>
       </form>
   )

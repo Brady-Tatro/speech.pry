@@ -4,10 +4,9 @@
     <script src="https://unpkg.com/react-media-player/dist/react-media-player.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speech.Pry</title>
     <meta src="vis.min.js" />
     <meta src="vis.min.css" />
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
     <%= stylesheet_link_tag    "application", media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -20,14 +19,9 @@
           <ul class="dropdown menu" data-dropdown-menu>
             <% if user_signed_in? %>
               <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
-              <li><%= link_to "Home", root_path %></li>
             <% else %>
               <li> <%= link_to 'Sign Up', new_user_registration_path %> </li>
               <li> <%= link_to 'Sign In', new_user_session_path %> </li>
-              <li><%= link_to "Home", root_path %></li>
-            <% end %>
-            <% flash.each do |key, value| %>
-            <%= value %>
             <% end %>
           </ul>
         </div>

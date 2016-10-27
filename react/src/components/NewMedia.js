@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { hashHistory } from 'react-router'
+import NavLink from './NavLink'
+
 class NewMedia extends Component {
   constructor(){
     super();
@@ -41,8 +43,18 @@ class NewMedia extends Component {
   render() {
     let flash = $('#flash').text();
     return (
+      <div>
+      <div className="row">
+        <ul className="breadcrumbs">
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/newmedia">Add Speech</NavLink></li>
+          <li><NavLink to="/indexmedia">Rate Speeches</NavLink></li>
+          <li><NavLink to="/userspeeches">See Your Speeches</NavLink></li>
+        </ul>
+      </div>
       <form onSubmit={this.handleFormSubmit}>
-      <div className="field">
+      <div className="field row">
+      <div className="large-8 columns">
       <input
         type="text"
         value={this.title}
@@ -50,7 +62,9 @@ class NewMedia extends Component {
         onChange={this.handleChange}
         />
         </div>
-        <div className="field">
+        </div>
+        <div className="field row">
+        <div className="large-8 columns">
         <input
           type="text"
           value={this.media}
@@ -58,10 +72,14 @@ class NewMedia extends Component {
           onChange={this.handleChange}
           />
           </div>
-        <div className="submit">
-          <input type="submit" value="Submit" />
+          </div>
+        <div className="submit row">
+        <div className="large-8 columns">
+          <input type="submit" className="button expanded" value="Submit" />
+        </div>
         </div>
         </form>
+        </div>
     )
   }
 }

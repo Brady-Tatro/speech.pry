@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, hashHistory } from 'react-router'
+import NavLink from './NavLink'
 
 class UserSpeeches extends Component {
   constructor(){
@@ -27,9 +28,21 @@ class UserSpeeches extends Component {
   render() {
     return (
       <div>
+      <div className="row">
+        <ul className="breadcrumbs">
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/newmedia">Add Speech</NavLink></li>
+          <li><NavLink to="/indexmedia">Rate Speeches</NavLink></li>
+          <li><NavLink to="/userspeeches">See Your Speeches</NavLink></li>
+        </ul>
+      </div>
+      <div className="field row">
+      <div className="small-3 small-centered columns">
       {this.state.speeches.map((speech) => (
-       <li ><Link to={"/userspeeches/" + speech.id}>{speech.title}</Link></li>
+       <ul><Link to={"/userspeeches/" + speech.id}>{speech.title}</Link></ul>
     ))}
+    </div>
+      </div>
       </div>
     )
   }
