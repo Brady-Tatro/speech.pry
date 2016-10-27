@@ -44,11 +44,16 @@ class MediaPlayer extends Component {
               <li><NavLink to="/userspeeches">See Your Speeches</NavLink></li>
             </ul>
           </div>
+          <div className="row">
           <h1>{this.state.title}</h1>
+          </div>
             <div className="media-player">
+            <div className="row">
               {Player}
+              </div>
             </div>
             <div className="media-controls">
+            <div className="row">
             <PlayPause/>
             <CurrentTime/>
             <SeekBar/>
@@ -62,7 +67,7 @@ class MediaPlayer extends Component {
             <li>{comment.time},{comment.comment}</li>
           ))}
             </div>
-
+            </div>
           </div>
         }
       </Media>
