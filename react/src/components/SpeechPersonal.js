@@ -62,7 +62,7 @@ class MediaPlayer extends Component {
             <Volume/>
             </div>
             {this.state.flash}
-            <div>
+            <div className="row">
             <VoteGraph
             comments={this.state.comments}
           />
