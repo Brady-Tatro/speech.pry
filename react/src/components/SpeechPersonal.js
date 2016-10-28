@@ -45,27 +45,34 @@ class MediaPlayer extends Component {
             </ul>
           </div>
           <div className="row">
-          <h1>{this.state.title}</h1>
+          <div className="twelve columns text-center">
+          <h1 id="header">-{this.state.title}-</h1>
+          </div>
           </div>
             <div className="media-player">
             <div className="row">
+            <div className="twelve columns text-center">
               {Player}
+              </div>
               </div>
             </div>
             <div className="media-controls">
             <div className="row">
-            <PlayPause/>
+            <div className="twelve columns text-center">
+            <PlayPause className="button tiny"/>
             <CurrentTime/>
             <SeekBar/>
             <Duration/>
-            <MuteUnmute/>
+            <MuteUnmute className="button tiny"/>
             <Volume/>
             </div>
-            {this.state.flash}
+            </div>
             <div className="row">
+            <div className="twelve columns text-center">
             <VoteGraph
             comments={this.state.comments}
           />
+            </div>
             </div>
             </div>
           </div>

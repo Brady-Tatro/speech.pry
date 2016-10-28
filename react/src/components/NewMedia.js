@@ -9,7 +9,6 @@ class NewMedia extends Component {
       speech: '',
       title: '',
       media: '',
-      flash: '',
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -17,21 +16,35 @@ class NewMedia extends Component {
   }
   handleFormSubmit(event) {
     let formData = { title: this.state.title, media: this.state.media }
+    if (this.state.title === ''){
+      $.toast({
+        heading: 'Error',
+        text: 'Speech Needs a Name',
+        position: 'top-right',
+        loader: false,
+        icon: 'error'
+      })
+    } else if (this.state.media === ''){
+      $.toast({
+        heading: 'Error',
+        text: 'Speech Needs A Youtube or Vimeo Link',
+        position: 'top-right',
+        loader: false,
+        icon: 'error'
+      })
+    } else {
     $.ajax({
       type: 'POST',
       url: '/api/v1/speeches',
       data: { speech: formData }
     }).success(data =>{
-      let message = 'success';
-      this.setState({ flash: message });
-      console.log('Posted');
+      $.toast('success');
+      hashHistory.push('/');
     }).error(data => {
-      let message = 'Invalid fields';
-      this.setState({ flash: message });
-      console.log(data);
+      $.toast('Please Sign In');
     });
     event.preventDefault();
-    hashHistory.push('/');
+  }
   }
 
   handleChange(event) {
@@ -41,7 +54,6 @@ class NewMedia extends Component {
   }
 
   render() {
-    let flash = $('#flash').text();
     return (
       <div>
       <div className="row">
@@ -52,7 +64,7 @@ class NewMedia extends Component {
           <li><NavLink to="/userspeeches">See Your Speeches</NavLink></li>
         </ul>
       </div>
-      <form onSubmit={this.handleFormSubmit}>
+      <form id="add" onSubmit={this.handleFormSubmit}>
       <div className="field row">
       <div className="large-8 columns">
       <input

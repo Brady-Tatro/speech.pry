@@ -39,7 +39,7 @@ class UserSpeeches extends Component {
       <div className="field row">
       <div className="small-3 small-centered columns">
       {this.state.speeches.map((speech) => (
-       <ul key={speech.id}><Link to={"/userspeeches/" + speech.id}>{speech.title}</Link></ul>
+       <ul key={speech.id} id="list"><Link to={"/userspeeches/" + speech.id}>{speech.title}</Link></ul>
     ))}
     </div>
       </div>

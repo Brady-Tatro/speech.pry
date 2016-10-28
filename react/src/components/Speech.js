@@ -51,13 +51,22 @@ class MediaPlayer extends Component {
         url: '/api/v1/comments',
         data: { fullComment: formData }
       }).success(data =>{
-        let message = 'success';
-        this.setState({ flash: message });
-        console.log('Posted');
+        $.toast({
+          heading: 'Success',
+          position: 'top-right',
+          bgColor: '#3ADB76',
+          loader: false,
+          stack: false,
+          icon: 'success'
+        });
       }).error(data => {
-        let message = 'Invalid fields';
-        this.setState({ flash: message });
-        console.log(data);
+        $.toast({
+          heading: 'error',
+          position: 'top-right',
+          loader: false,
+          stack: false,
+          icon: 'error'
+        });
       });
        event.preventDefault();
     }
@@ -69,13 +78,23 @@ class MediaPlayer extends Component {
         url: '/api/v1/comments',
         data: { fullComment: formData }
       }).success(data =>{
-        let message = 'success';
-        this.setState({ flash: message });
+        $.toast({
+          heading: 'Success',
+          position: 'top-right',
+          bgColor: '#EC5840',
+          loader: false,
+          stack: false,
+          icon: 'success'
+        });
         console.log('Posted');
       }).error(data => {
-        let message = 'Invalid fields';
-        this.setState({ flash: message });
-        console.log(data);
+        $.toast({
+          heading: 'error',
+          position: 'top-right',
+          loader: false,
+          stack: false,
+          icon: 'error'
+        });
       });
        event.preventDefault();
     }
@@ -94,23 +113,30 @@ class MediaPlayer extends Component {
             </ul>
           </div>
           <div className="row">
-          <h1>{this.state.title}</h1>
+          <div className="twelve columns text-center">
+          <h1 id="header">-{this.state.title}-</h1>
+          </div>
           </div>
             <div className="media-player">
             <div className="row">
+            <div className="twelve columns text-center">
               {Player}
               </div>
             </div>
+            </div>
             <div className="media-controls">
             <div className="row">
-            <PlayPause/>
+              <div className="twelve columns text-center">
+            <PlayPause className="button tiny"/>
             <CurrentTime/>
             <SeekBar/>
             <Duration/>
-            <MuteUnmute/>
+            <MuteUnmute className="button tiny"/>
             <Volume/>
             </div>
+            </div>
             <div className="row">
+            <div className="twelve columns text-center">
             <button onClick={this.handleClick}>
             <CommentForm
             handleFormSubmit={this.handleFormSubmit}
@@ -126,6 +152,7 @@ class MediaPlayer extends Component {
             />
             </button>
                   {this.state.flash}
+          </div>
           </div>
           </div>
           </div>

@@ -4,29 +4,30 @@
     <script src="https://unpkg.com/react-media-player/dist/react-media-player.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
     <title>Speech.Pry</title>
-    <meta src="vis.min.js" />
-    <meta src="vis.min.css" />
     <%= stylesheet_link_tag    "application", media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-
-  <body>
-    <div class="top-bar">
-      <ul class="menu">
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <% if user_signed_in? %>
-              <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
-            <% end %>
+    <div id="back">
+      <body id="page">
+        <div class="top-bar">
+          <ul class="menu">
+            <div class="top-bar-left">
+              <ul class="dropdown menu" data-dropdown-menu>
+                <% if user_signed_in? %>
+                <h4><%= "Speech.pry" %> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></h4>
+                <% else %>
+                <h4> <%= "Speech.pry" %>
+                <% end %>
+              </ul>
+            </div>
           </ul>
         </div>
-      </ul>
+
+        <%= yield %>
+
+      </body>
     </div>
-
-    <%= yield %>
-
-  </body>
-
 </html>
