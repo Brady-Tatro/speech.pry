@@ -53,7 +53,7 @@ class MediaPlayer extends Component {
       }).success(data =>{
         $.toast({
           heading: 'Success',
-          position: 'bottom-right',
+          position: 'top-right',
           bgColor: '#3ADB76',
           loader: false,
           stack: false,
@@ -62,7 +62,7 @@ class MediaPlayer extends Component {
       }).error(data => {
         $.toast({
           heading: 'error',
-          position: 'bottom-right',
+          position: 'top-right',
           loader: false,
           stack: false,
           icon: 'error'
@@ -80,7 +80,7 @@ class MediaPlayer extends Component {
       }).success(data =>{
         $.toast({
           heading: 'Success',
-          position: 'bottom-right',
+          position: 'top-right',
           bgColor: '#EC5840',
           loader: false,
           stack: false,
@@ -90,7 +90,7 @@ class MediaPlayer extends Component {
       }).error(data => {
         $.toast({
           heading: 'error',
-          position: 'bottom-right',
+          position: 'top-right',
           loader: false,
           stack: false,
           icon: 'error'
@@ -113,15 +113,20 @@ class MediaPlayer extends Component {
             </ul>
           </div>
           <div className="row">
+          <div className="twelve columns text-center">
           <h1>{this.state.title}</h1>
+          </div>
           </div>
             <div className="media-player">
             <div className="row">
+            <div className="twelve columns text-center">
               {Player}
               </div>
             </div>
+            </div>
             <div className="media-controls">
             <div className="row">
+              <div className="twelve columns text-center">
             <PlayPause/>
             <CurrentTime/>
             <SeekBar/>
@@ -129,7 +134,9 @@ class MediaPlayer extends Component {
             <MuteUnmute/>
             <Volume/>
             </div>
+            </div>
             <div className="row">
+            <div className="twelve columns text-center">
             <button onClick={this.handleClick}>
             <CommentForm
             handleFormSubmit={this.handleFormSubmit}
@@ -145,6 +152,7 @@ class MediaPlayer extends Component {
             />
             </button>
                   {this.state.flash}
+          </div>
           </div>
           </div>
           </div>

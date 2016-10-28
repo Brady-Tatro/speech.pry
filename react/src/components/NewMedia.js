@@ -20,7 +20,7 @@ class NewMedia extends Component {
       $.toast({
         heading: 'Error',
         text: 'Speech Needs a Name',
-        position: 'bottom-right',
+        position: 'top-right',
         loader: false,
         icon: 'error'
       })
@@ -28,7 +28,7 @@ class NewMedia extends Component {
       $.toast({
         heading: 'Error',
         text: 'Speech Needs A Youtube or Vimeo Link',
-        position: 'bottom-right',
+        position: 'top-right',
         loader: false,
         icon: 'error'
       })
