@@ -9,22 +9,22 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-
-  <body>
-    <div class="top-bar">
-      <ul class="menu">
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <% if user_signed_in? %>
-              <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
-            <% end %>
+    <div id="back">
+      <body id="page">
+        <div class="top-bar">
+          <ul class="menu">
+            <div class="top-bar-left">
+              <ul class="dropdown menu" data-dropdown-menu>
+                <% if user_signed_in? %>
+                  <li id="signed"> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
+                <% end %>
+              </ul>
+            </div>
           </ul>
         </div>
-      </ul>
+
+        <%= yield %>
+
+      </body>
     </div>
-
-    <%= yield %>
-
-  </body>
-
 </html>
