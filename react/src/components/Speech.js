@@ -51,12 +51,10 @@ class MediaPlayer extends Component {
         url: '/api/v1/comments',
         data: { fullComment: formData }
       }).success(data =>{
-        let message = 'success';
-        this.setState({ flash: message });
+        $.toast('success');
         console.log('Posted');
       }).error(data => {
-        let message = 'Invalid fields';
-        this.setState({ flash: message });
+        $.toast('Something Went Wrong');
         console.log(data);
       });
        event.preventDefault();
@@ -69,12 +67,10 @@ class MediaPlayer extends Component {
         url: '/api/v1/comments',
         data: { fullComment: formData }
       }).success(data =>{
-        let message = 'success';
-        this.setState({ flash: message });
+          $.toast('success');
         console.log('Posted');
       }).error(data => {
-        let message = 'Invalid fields';
-        this.setState({ flash: message });
+        $.toast('Something Went Wrong');
         console.log(data);
       });
        event.preventDefault();

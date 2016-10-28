@@ -9,7 +9,6 @@ class NewMedia extends Component {
       speech: '',
       title: '',
       media: '',
-      flash: '',
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -17,21 +16,22 @@ class NewMedia extends Component {
   }
   handleFormSubmit(event) {
     let formData = { title: this.state.title, media: this.state.media }
+    if (this.state.title === '' || this.state.media === ''){
+      $.toast('Invalid Fields')
+    } else {
+
     $.ajax({
       type: 'POST',
       url: '/api/v1/speeches',
       data: { speech: formData }
     }).success(data =>{
-      let message = 'success';
-      this.setState({ flash: message });
-      console.log('Posted');
+      $.toast('success');
+      hashHistory.push('/');
     }).error(data => {
-      let message = 'Invalid fields';
-      this.setState({ flash: message });
-      console.log(data);
+      $.toast('Please Sign In');
     });
     event.preventDefault();
-    hashHistory.push('/');
+  }
   }
 
   handleChange(event) {
@@ -41,7 +41,6 @@ class NewMedia extends Component {
   }
 
   render() {
-    let flash = $('#flash').text();
     return (
       <div>
       <div className="row">
