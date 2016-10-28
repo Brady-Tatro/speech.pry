@@ -57,6 +57,7 @@ class NewMedia extends Component {
       <div className="large-8 columns">
       <input
         type="text"
+        placeholder="Name of Speech"
         value={this.title}
         name='title'
         onChange={this.handleChange}
@@ -67,6 +68,7 @@ class NewMedia extends Component {
         <div className="large-8 columns">
         <input
           type="text"
+          placeholder="Valid Youtube or Vimeo Link"
           value={this.media}
           name='media'
           onChange={this.handleChange}
