@@ -8,6 +8,8 @@ import IndexMedia from './components/IndexMedia'
 import Speech from './components/Speech'
 import UserSpeeches from './components/UserSpeeches'
 import SpeechPersonal from './components/SpeechPersonal'
+import UserSignIn from './components/UserSignIn'
+import UserSignUp from './components/UserSignUp'
 
 $(function() {
   ReactDOM.render((
@@ -18,6 +20,8 @@ $(function() {
     <Route path="indexmedia/:id" component={Speech}/>
     <Route path="/userspeeches" component={UserSpeeches}/>
     <Route path="userspeeches/:id" component={SpeechPersonal}/>
+    <Route path="/users/sign_in" component={UserSignIn}/>
+    <Route path="/users/sign_up" component={UserSignUp}/>
     </Router>
   ), document.getElementById('app'))
 });
