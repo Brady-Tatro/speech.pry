@@ -64,7 +64,7 @@ class NewMedia extends Component {
           <li><NavLink to="/userspeeches">See Your Speeches</NavLink></li>
         </ul>
       </div>
-      <form onSubmit={this.handleFormSubmit}>
+      <form id="add" onSubmit={this.handleFormSubmit}>
       <div className="field row">
       <div className="large-8 columns">
       <input

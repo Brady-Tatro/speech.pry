@@ -59,11 +59,11 @@ class MediaPlayer extends Component {
             <div className="media-controls">
             <div className="row">
             <div className="twelve columns text-center">
-            <PlayPause/>
+            <PlayPause className="button tiny"/>
             <CurrentTime/>
             <SeekBar/>
             <Duration/>
-            <MuteUnmute/>
+            <MuteUnmute className="button tiny"/>
             <Volume/>
             </div>
             </div>

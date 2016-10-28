@@ -13,7 +13,7 @@ export default  React.createClass({
           <li><NavLink to="/indexmedia">Rate Speeches</NavLink></li>
           <li><NavLink to="/userspeeches">See Your Speeches</NavLink></li>
           <li><NavLink to="/users/sign_in"> Sign In</NavLink></li>
-          <li id='toggle'><NavLink to="/users/sign_up"> Sign Up</NavLink></li>
+          <li><NavLink to="/users/sign_up"> Sign Up</NavLink></li>
           {this.props.children}
         </ul>
       </div>

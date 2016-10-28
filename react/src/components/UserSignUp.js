@@ -64,7 +64,7 @@ class UserSignUp extends Component {
             <li><NavLink to="/">Home</NavLink></li>
           </ul>
         </div>
-        
+
         <div className="row page-head text-center">
           <div className="columns small-12">
             <h2>Sign up</h2>
@@ -88,7 +88,7 @@ class UserSignUp extends Component {
           <div className="row">
             <div className="columns small-8">
               <label>Username</label>
-              <input placeholder="e.g. Kyle Wood" type="text" name="username" onChange={this.handleFieldChange}/>
+              <input placeholder="e.g. Kyle" type="text" name="username" onChange={this.handleFieldChange}/>
             </div>
           </div>
 
