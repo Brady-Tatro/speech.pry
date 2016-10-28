@@ -16,10 +16,23 @@ class NewMedia extends Component {
   }
   handleFormSubmit(event) {
     let formData = { title: this.state.title, media: this.state.media }
-    if (this.state.title === '' || this.state.media === ''){
-      $.toast('Invalid Fields')
+    if (this.state.title === ''){
+      $.toast({
+        heading: 'Error',
+        text: 'Speech Needs a Name',
+        position: 'bottom-right',
+        loader: false,
+        icon: 'error'
+      })
+    } else if (this.state.media === ''){
+      $.toast({
+        heading: 'Error',
+        text: 'Speech Needs A Youtube or Vimeo Link',
+        position: 'bottom-right',
+        loader: false,
+        icon: 'error'
+      })
     } else {
-
     $.ajax({
       type: 'POST',
       url: '/api/v1/speeches',

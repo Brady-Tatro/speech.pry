@@ -51,11 +51,22 @@ class MediaPlayer extends Component {
         url: '/api/v1/comments',
         data: { fullComment: formData }
       }).success(data =>{
-        $.toast('success');
-        console.log('Posted');
+        $.toast({
+          heading: 'Success',
+          position: 'bottom-right',
+          bgColor: '#3ADB76',
+          loader: false,
+          stack: false,
+          icon: 'success'
+        });
       }).error(data => {
-        $.toast('Something Went Wrong');
-        console.log(data);
+        $.toast({
+          heading: 'error',
+          position: 'bottom-right',
+          loader: false,
+          stack: false,
+          icon: 'error'
+        });
       });
        event.preventDefault();
     }
@@ -67,11 +78,23 @@ class MediaPlayer extends Component {
         url: '/api/v1/comments',
         data: { fullComment: formData }
       }).success(data =>{
-          $.toast('success');
+        $.toast({
+          heading: 'Success',
+          position: 'bottom-right',
+          bgColor: '#EC5840',
+          loader: false,
+          stack: false,
+          icon: 'success'
+        });
         console.log('Posted');
       }).error(data => {
-        $.toast('Something Went Wrong');
-        console.log(data);
+        $.toast({
+          heading: 'error',
+          position: 'bottom-right',
+          loader: false,
+          stack: false,
+          icon: 'error'
+        });
       });
        event.preventDefault();
     }
