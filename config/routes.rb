@@ -14,6 +14,7 @@ root "application#index"
       resources :comments, only: [:new, :create]
       resources :speeches, only: [:new, :create, :show, :index]
       resources :members, only: [:show, :index]
+      devise_for :users, controllers: { registations: 'api/v1/registations' }
     end
   end
 end
