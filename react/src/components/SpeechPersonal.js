@@ -46,7 +46,7 @@ class MediaPlayer extends Component {
           </div>
           <div className="row">
           <div className="twelve columns text-center">
-          <h1>{this.state.title}</h1>
+          <h1 id="header">-{this.state.title}-</h1>
           </div>
           </div>
             <div className="media-player">
