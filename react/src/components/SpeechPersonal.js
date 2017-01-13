@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import { Media, controls } from 'react-media-player'
-const { PlayPause, CurrentTime, Progress, SeekBar, Duration, MuteUnmute, Volume } = controls
-import NavLink from './NavLink'
-import VoteGraph from './VoteGraph'
+import React, { Component } from 'react';
+import { Media, controls } from 'react-media-player';
+const { PlayPause, CurrentTime, Progress, SeekBar, Duration, MuteUnmute, Volume } = controls;
+import NavLink from './NavLink';
+import VoteGraph from './VoteGraph';
+import { Chart } from 'react-google-charts';
 
 class MediaPlayer extends Component {
   constructor() {
@@ -11,7 +12,7 @@ class MediaPlayer extends Component {
       title: '',
       media: 'https://www.youtube.com/watch?v=l9ue0SJs74I',
       comments: []
-    }
+    };
     this.handleCreation = this.handleCreation.bind(this);
   }
 
@@ -19,7 +20,7 @@ class MediaPlayer extends Component {
     $.ajax({
       method: 'GET',
       url: `/api/v1/speeches/${speech.id}`
-    })
+    });
   }
 
   componentWillMount() {
@@ -28,7 +29,7 @@ class MediaPlayer extends Component {
       url: `/api/v1/speeches/${this.props.params.id}`
     }).success(data => {
       this.setState({ media: data.speech.media, title: data.speech.title, comments: data.comment});
-    })
+    });
   }
 
   render() {
@@ -78,7 +79,7 @@ class MediaPlayer extends Component {
           </div>
         }
       </Media>
-    )
+    );
   }
 }
 
