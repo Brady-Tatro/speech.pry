@@ -3,11 +3,7 @@ import { Chart } from 'react-google-charts';
 
 
 const VoteGraph = props => {
-  let x = props.comments.map((comment) => (comment.time))
-  let y = props.comments.map((comment) => (comment.comment))
-  let c = x.map(function (e, i) {
-    return [e, y[i]];
-});
+  let c = props.comments.map((comment)=> [comment.time, comment.comment]);
   return (
     <div>
     {c}
